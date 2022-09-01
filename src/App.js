@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { createRef, useEffect, useState } from 'react';
 import Country from './components/Country/Country';
+import Cart from './components/Cart/Cart';
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
       <h2>Country loaded: {countries.length}</h2>
       <h4>Added Country: {cart.length}</h4>
+      <Cart cart = {cart}></Cart>
       
         {
           countries.map(country => <Country country = {country} handleAddedCountry = {handleAddedCountry} key = {country.flag} ></Country>)
